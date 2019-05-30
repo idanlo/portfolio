@@ -41,66 +41,48 @@ const Background = () => (
 
 const LandingPage = () => (
   <Section.Container id="home" Background={Background}>
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          contentfulAbout {
-            name
-            roles
-            socialLinks {
-              id
-              url
-              name
-              fontAwesomeIcon
-            }
-          }
-        }
-      `}
-      render={data => {
-        const { name, socialLinks, roles } = data.contentfulAbout;
+    <Fragment>
+      <Heading
+        textAlign="center"
+        as="h1"
+        color="primary"
+        fontSize={[5, 6, 8]}
+        mb={[3, 4, 5]}
+      >
+        {`Hello, I'm Idan Lottan!`}
+      </Heading>
 
-        return (
-          <Fragment>
-            <Heading
-              textAlign="center"
-              as="h1"
-              color="primary"
-              fontSize={[5, 6, 8]}
-              mb={[3, 4, 5]}
-            >
-              {`Hello, I'm ${name}!`}
-            </Heading>
+      <Heading
+        as="h2"
+        color="primary"
+        fontSize={[4, 5, 6]}
+        mb={[3, 5]}
+        textAlign="center"
+      >
+        <TextLoop>
+          {Array(5)
+            .fill(0)
+            .map(text => (
+              <Text width={[300, 500]} key={text}>
+                {text}
+              </Text>
+            ))}
+        </TextLoop>
+      </Heading>
 
-            <Heading
-              as="h2"
-              color="primary"
-              fontSize={[4, 5, 6]}
-              mb={[3, 5]}
-              textAlign="center"
-            >
-              <TextLoop>
-                {roles.map(text => (
-                  <Text width={[300, 500]} key={text}>
-                    {text}
-                  </Text>
-                ))}
-              </TextLoop>
-            </Heading>
-
-            <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
-              {socialLinks.map(({ id, ...rest }) => (
-                <Box mx={3} fontSize={[5, 6, 6]} key={id}>
-                  <SocialLink {...rest} />
-                </Box>
-              ))}
-            </Flex>
-            <SectionLink section="about">
-              {({ onClick }) => <MouseIcon onClick={onClick} />}
-            </SectionLink>
-          </Fragment>
-        );
-      }}
-    />
+      <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
+        {Array(5)
+          .fill(0)
+          .map(id => (
+            <Box mx={3} fontSize={[5, 6, 6]} key={id}>
+              <SocialLink />
+            </Box>
+          ))}
+      </Flex>
+      <SectionLink section="about">
+        {({ onClick }) => <MouseIcon onClick={onClick} />}
+      </SectionLink>
+    </Fragment>
   </Section.Container>
 );
 

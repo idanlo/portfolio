@@ -70,24 +70,11 @@ const TextContainer = styled.div`
 
 const ImageContainer = styled.div`
   margin: auto;
+  margin-top: 205px;
   width: ${CARD_HEIGHT};
 
   ${MEDIA_QUERY_SMALL} {
     width: calc(${CARD_HEIGHT} / 2);
-  }
-`;
-
-const ProjectImage = styled(Image)`
-  width: ${CARD_HEIGHT};
-  height: ${CARD_HEIGHT};
-  padding: 40px;
-  margin-top: 0px;
-
-  ${MEDIA_QUERY_SMALL} {
-    height: calc(${CARD_HEIGHT} / 2);
-    width: calc(${CARD_HEIGHT} / 2);
-    margin-top: calc(${CARD_HEIGHT} / 4);
-    padding: 10px;
   }
 `;
 
@@ -103,30 +90,23 @@ const ProjectTag = styled.div`
   }
 `;
 
-const Project = ({
-  name,
-  description,
-  projectUrl,
-  repositoryUrl,
-  type,
-  publishedDate,
-  logo,
-}) => (
+const Project = () => (
   <Card p={0}>
     <Flex style={{ height: CARD_HEIGHT }}>
       <TextContainer>
         <span>
           <Title my={2} pb={1}>
-            {name}
+
+            react-spotify
           </Title>
         </span>
         <Text width={[1]} style={{ overflow: 'auto' }}>
-          {description}
+
+          A Spotify clone made with React.js
         </Text>
       </TextContainer>
 
       <ImageContainer>
-        <ProjectImage src={logo.image.src} alt={logo.title} />
         <ProjectTag>
           <Flex
             style={{
@@ -137,14 +117,14 @@ const Project = ({
               <SocialLink
                 name="Check repository"
                 fontAwesomeIcon="github"
-                url={repositoryUrl}
+                url="https://github.com/idanlo"
               />
             </Box>
             <Box mx={1} fontSize={5}>
               <SocialLink
                 name="See project"
                 fontAwesomeIcon="globe"
-                url={projectUrl}
+                url="https://github.com/idanlo"
               />
             </Box>
           </Flex>
@@ -155,10 +135,11 @@ const Project = ({
             x="right"
             round
           >
-            {type}
+
+            React.js
           </ImageSubtitle>
           <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
+            <ImageSubtitle bg="backgroundDark">May 30th 2019</ImageSubtitle>
           </Hide>
         </ProjectTag>
       </ImageContainer>
@@ -166,55 +147,18 @@ const Project = ({
   </Card>
 );
 
-Project.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  projectUrl: PropTypes.string.isRequired,
-  repositoryUrl: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  publishedDate: PropTypes.string.isRequired,
-  logo: PropTypes.shape({
-    image: PropTypes.shape({
-      src: PropTypes.string,
-    }),
-  }).isRequired,
-};
-
 const Projects = () => (
   <Section.Container id="projects" Background={Background}>
     <Section.Header name="Projects" icon="💻" Box="notebook" />
-    <StaticQuery
-      query={graphql`
-        query ProjectsQuery {
-          contentfulAbout {
-            projects {
-              id
-              name
-              description
-              projectUrl
-              repositoryUrl
-              publishedDate(formatString: "YYYY")
-              type
-              logo {
-                title
-                image: resize(width: 200, quality: 100) {
-                  src
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={({ contentfulAbout }) => (
-        <CardContainer minWidth="350px">
-          {contentfulAbout.projects.map((p, i) => (
-            <Fade bottom delay={i * 200}>
-              <Project key={p.id} {...p} />
-            </Fade>
-          ))}
-        </CardContainer>
-      )}
-    />
+    <CardContainer minWidth="350px">
+      {Array(5)
+        .fill(0)
+        .map((p, i) => (
+          <Fade bottom delay={i * 200}>
+            <Project key={p} />
+          </Fade>
+        ))}
+    </CardContainer>
   </Section.Container>
 );
 

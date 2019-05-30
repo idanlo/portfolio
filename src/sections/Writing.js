@@ -99,55 +99,18 @@ const parsePost = postFromGraphql => {
 const edgeToArray = data => data.edges.map(edge => edge.node);
 
 const Writing = () => (
-  <StaticQuery
-    query={graphql`
-      query MediumPostQuery {
-        site {
-          siteMetadata {
-            isMediumUserDefined
-          }
-        }
-        allMediumPost(limit: 6, sort: { fields: createdAt, order: DESC }) {
-          edges {
-            node {
-              id
-              uniqueSlug
-              title
-              createdAt(formatString: "MMM YYYY")
-              virtuals {
-                subtitle
-                readingTime
-                previewImage {
-                  imageId
-                }
-              }
-              author {
-                username
-              }
-            }
-          }
-        }
-      }
-    `}
-    render={({ allMediumPost, site }) => {
-      const posts = edgeToArray(allMediumPost).map(parsePost);
-      const { isMediumUserDefined } = site.siteMetadata;
-      return (
-        isMediumUserDefined && (
-          <Section.Container id="writing" Background={Background}>
-            <Section.Header name="Writing" icon="✍️" label="writing" />
-            <CardContainer minWidth="300px">
-              {posts.map(p => (
-                <Fade bottom>
-                  <Post key={p.id} {...p} />
-                </Fade>
-              ))}
-            </CardContainer>
-          </Section.Container>
-        )
-      );
-    }}
-  />
+  <Section.Container id="writing" Background={Background}>
+    <Section.Header name="Writing" icon="✍️" label="writing" />
+    <CardContainer minWidth="300px">
+      {Array(5)
+        .fill(0)
+        .map(p => (
+          <Fade bottom>
+            <Post key={p} />
+          </Fade>
+        ))}
+    </CardContainer>
+  </Section.Container>
 );
 
 export default Writing;
