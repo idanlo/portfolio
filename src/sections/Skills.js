@@ -49,8 +49,8 @@ const EllipsisHeading = styled(Heading)`
   border-bottom: ${props => props.theme.colors.primary} 5px solid;
 `;
 
-const Post = ({ title, text, image, url, date, time }) => (
-  <Card onClick={() => window.open(url, '_blank')} pb={4}>
+const Post = () => (
+  <Card onClick={() => window.open('', '_blank')} pb={4}>
     <EllipsisHeading m={3} p={1}>
 
       React.js
@@ -62,49 +62,22 @@ const Post = ({ title, text, image, url, date, time }) => (
         alt="React.js"
       />
     }
-    <Text m={3}>{text}</Text>
+    <Text m={3}>Hello world</Text>
   </Card>
 );
 
 Post.propTypes = {
-  title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  time: PropTypes.number.isRequired,
+  // title: PropTypes.string.isRequired,
+  // text: PropTypes.string.isRequired,
+  // image: PropTypes.string.isRequired,
+  // url: PropTypes.string.isRequired,
+  // date: PropTypes.string.isRequired,
+  // time: PropTypes.number.isRequired,
 };
-
-const parsePost = postFromGraphql => {
-  const MEDIUM_CDN = 'https://cdn-images-1.medium.com/max/400';
-  const MEDIUM_URL = 'https://medium.com';
-  const {
-    id,
-    uniqueSlug,
-    createdAt,
-    title,
-    virtuals,
-    author,
-  } = postFromGraphql;
-  const image =
-    virtuals.previewImage.imageId &&
-    `${MEDIUM_CDN}/${virtuals.previewImage.imageId}`;
-  return {
-    id,
-    title,
-    time: virtuals.readingTime,
-    date: createdAt,
-    text: virtuals.subtitle,
-    image,
-    url: `${MEDIUM_URL}/${author.username}/${uniqueSlug}`,
-  };
-};
-
-const edgeToArray = data => data.edges.map(edge => edge.node);
 
 const Skills = () => (
-  <Section.Container id="writing" Background={Background}>
-    <Section.Header name="Writing" icon="✍️" label="writing" />
+  <Section.Container id="skills" Background={Background}>
+    <Section.Header name="Skills" icon="✍️" label="skills" />
     <CardContainer minWidth="300px">
       {Array(5)
         .fill(0)
