@@ -60,13 +60,11 @@ const LandingPage = () => (
         textAlign="center"
       >
         <TextLoop>
-          {Array(5)
-            .fill(0)
-            .map(text => (
-              <Text width={[300, 500]} key={text}>
-                {text}
-              </Text>
-            ))}
+          {['Javascript', 'Typescript', 'Nodejs', 'React'].map(text => (
+            <Text width={[300, 500]} key={text}>
+              {text}
+            </Text>
+          ))}
         </TextLoop>
       </Heading>
 
