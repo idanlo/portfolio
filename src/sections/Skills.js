@@ -52,13 +52,17 @@ const EllipsisHeading = styled(Heading)`
 const Post = ({ title, text, image, url, date, time }) => (
   <Card onClick={() => window.open(url, '_blank')} pb={4}>
     <EllipsisHeading m={3} p={1}>
-      {title}
+
+      React.js
     </EllipsisHeading>
-    {image && <CoverImage src={image} height="200px" alt={title} />}
+    {
+      <CoverImage
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
+        height="200px"
+        alt="React.js"
+      />
+    }
     <Text m={3}>{text}</Text>
-    <ImageSubtitle bg="primaryLight" color="white" x="right" y="bottom" round>
-      {`${date} - ${Math.ceil(time)} min`}
-    </ImageSubtitle>
   </Card>
 );
 
@@ -98,7 +102,7 @@ const parsePost = postFromGraphql => {
 
 const edgeToArray = data => data.edges.map(edge => edge.node);
 
-const Writing = () => (
+const Skills = () => (
   <Section.Container id="writing" Background={Background}>
     <Section.Header name="Writing" icon="✍️" label="writing" />
     <CardContainer minWidth="300px">
@@ -113,4 +117,4 @@ const Writing = () => (
   </Section.Container>
 );
 
-export default Writing;
+export default Skills;
