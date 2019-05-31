@@ -54,6 +54,7 @@ const Footer = () => (
             display: 'table',
           }}
         >
+
           Powered By
         </Text>
       </span>
@@ -64,7 +65,8 @@ const Footer = () => (
           alt="Powered by Contentful"
         />
         <Text m={2} fontSize={4}>
-          <span role="img" aria-label="heart">
+          <span role="img" aria-label="heart" alt="heart">
+
             ❤️
           </span>
         </Text>

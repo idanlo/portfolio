@@ -56,7 +56,7 @@ const Post = ({ name }) => (
     <CoverImage
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
       height="200px"
-      alt="React.js"
+      alt={name}
     />
 
     <Text m={3}>Hello world</Text>

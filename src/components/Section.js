@@ -40,7 +40,12 @@ const Header = ({ name, icon = '', label = '' }) => (
       <LinkAnimated selected>
         {name}
         {icon && (
-          <span role="img" aria-label={label} style={{ marginLeft: '10px' }}>
+          <span
+            role="img"
+            aria-label={label}
+            style={{ marginLeft: '10px' }}
+            alt="icon"
+          >
             {icon}
           </span>
         )}
