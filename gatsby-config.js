@@ -18,6 +18,14 @@ module.exports = {
         fonts: ['cabin', 'Open Sans'],
       },
     },
+    'gatsby-transformer-json',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/projects`,
+      },
+    },
     'gatsby-transformer-remark',
     'gatsby-plugin-offline',
   ],
