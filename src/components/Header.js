@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import Headroom from 'react-headroom';
-import { Flex, Image } from 'rebass';
+import FontAwesome from 'react-fontawesome';
+import { Flex } from 'rebass';
 import styled from 'styled-components';
 import { SectionLinks } from 'react-scroll-section';
 import Fade from 'react-reveal/Fade';
 import RouteLink from './RouteLink';
-import Logo from './Logo/Portfolio.svg';
 
 const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
 
@@ -49,12 +49,12 @@ const Header = () => (
             const { home, links } = formatLinks(allLinks);
 
             const homeLink = home && (
-              <Image
-                src={Logo}
-                width="50px"
-                alt="Portfolio Logo"
+              <FontAwesome
+                name="code"
                 onClick={home.onClick}
+                size="lg"
                 style={{
+                  color: 'white',
                   cursor: 'pointer',
                 }}
               />
