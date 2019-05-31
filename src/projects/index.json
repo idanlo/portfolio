@@ -1,0 +1,15 @@
+[
+  {
+    "value": {
+      "name": "react-spotify",
+      "github": "https://github.com/idanlo/react-spotify",
+      "link": "https://react-spotify.netlify.com"
+    }
+  },
+  {
+    "value": {
+      "name": "react-native-spotify",
+      "github": "https://github.com/idanlo/react-native-spotify"
+    }
+  }
+]
