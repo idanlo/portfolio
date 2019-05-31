@@ -79,19 +79,19 @@ const ImageContainer = styled.div`
   }
 `;
 
-const ProjectImage = styled(Image)`
-  width: ${CARD_HEIGHT};
-  height: ${CARD_HEIGHT};
-  padding: 40px;
-  margin-top: 0px;
+// const ProjectImage = styled(Image)`
+//   width: ${CARD_HEIGHT};
+//   height: ${CARD_HEIGHT};
+//   padding: 40px;
+//   margin-top: 0px;
 
-  ${MEDIA_QUERY_SMALL} {
-    height: calc(${CARD_HEIGHT} / 2);
-    width: calc(${CARD_HEIGHT} / 2);
-    margin-top: calc(${CARD_HEIGHT} / 4);
-    padding: 10px;
-  }
-`;
+//   ${MEDIA_QUERY_SMALL} {
+//     height: calc(${CARD_HEIGHT} / 2);
+//     width: calc(${CARD_HEIGHT} / 2);
+//     margin-top: calc(${CARD_HEIGHT} / 4);
+//     padding: 10px;
+//   }
+// `;
 
 const ProjectTag = styled.div`
   position: relative;
