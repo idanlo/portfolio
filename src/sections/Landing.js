@@ -8,6 +8,14 @@ import SocialLink from '../components/SocialLink';
 import MouseIcon from '../components/MouseIcon';
 import Triangle from '../components/Triangle';
 
+const links = [
+  {
+    fontAwesomeIcon: 'github',
+    name: 'GitHub',
+    url: 'https://github.com/idanlo',
+  },
+];
+
 const Background = () => (
   <div>
     <Triangle
@@ -69,13 +77,11 @@ const LandingPage = () => (
       </Heading>
 
       <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
-        {Array(5)
-          .fill(0)
-          .map(id => (
-            <Box mx={3} fontSize={[5, 6, 6]} key={id}>
-              <SocialLink />
-            </Box>
-          ))}
+        {links.map(link => (
+          <Box mx={3} fontSize={[5, 6, 6]} key={link.name}>
+            <SocialLink {...link} />
+          </Box>
+        ))}
       </Flex>
       <SectionLink section="about">
         {({ onClick }) => <MouseIcon onClick={onClick} />}
