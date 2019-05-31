@@ -78,15 +78,15 @@ Post.propTypes = {
 const Skills = () => (
   <Section.Container id="skills" Background={Background}>
     <Section.Header name="Skills" icon="✍️" label="skills" />
-    <CardContainer minWidth="300px">
+    {/* <CardContainer minWidth="300px">
       {Array(5)
         .fill(0)
-        .map(p => (
+        .map((p, i) => (
           <Fade bottom>
-            <Post key={p} />
+            <Post key={i} />
           </Fade>
         ))}
-    </CardContainer>
+    </CardContainer> */}
   </Section.Container>
 );
 
