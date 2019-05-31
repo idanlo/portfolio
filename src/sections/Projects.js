@@ -90,7 +90,7 @@ const ProjectTag = styled.div`
   }
 `;
 
-const Project = ({ name, github, link }) => {
+const Project = ({ name, github, link, tech, description }) => {
   return (
     <Card p={0}>
       <Flex style={{ height: CARD_HEIGHT }}>
@@ -101,8 +101,7 @@ const Project = ({ name, github, link }) => {
             </Title>
           </span>
           <Text width={[1]} style={{ overflow: 'auto' }}>
-
-            A Spotify clone made with React.js
+            {description}
           </Text>
         </TextContainer>
 
@@ -137,8 +136,7 @@ const Project = ({ name, github, link }) => {
               x="right"
               round
             >
-
-              React.js
+              {tech}
             </ImageSubtitle>
             <Hide query={MEDIA_QUERY_SMALL}>
               <ImageSubtitle bg="backgroundDark">May 30th 2019</ImageSubtitle>
@@ -154,6 +152,8 @@ Project.propTypes = {
   name: PropTypes.string.isRequired,
   github: PropTypes.string.isRequired,
   link: PropTypes.string,
+  tech: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 const Projects = () => {
@@ -166,6 +166,8 @@ const Projects = () => {
               name
               github
               link
+              tech
+              description
             }
           }
         }
