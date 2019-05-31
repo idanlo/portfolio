@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, Flex, Box } from 'rebass';
+import { Text, Flex, Box, Image } from 'rebass';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
@@ -70,11 +70,26 @@ const TextContainer = styled.div`
 
 const ImageContainer = styled.div`
   margin: auto;
-  margin-top: 205px;
+  margin-top: calc(${CARD_HEIGHT} + 5px);
   width: ${CARD_HEIGHT};
 
   ${MEDIA_QUERY_SMALL} {
     width: calc(${CARD_HEIGHT} / 2);
+    margin-top: calc(${CARD_HEIGHT} / 2 + ${CARD_HEIGHT} / 4 + 5px);
+  }
+`;
+
+const ProjectImage = styled(Image)`
+  width: ${CARD_HEIGHT};
+  height: ${CARD_HEIGHT};
+  padding: 40px;
+  margin-top: 0px;
+
+  ${MEDIA_QUERY_SMALL} {
+    height: calc(${CARD_HEIGHT} / 2);
+    width: calc(${CARD_HEIGHT} / 2);
+    margin-top: calc(${CARD_HEIGHT} / 4);
+    padding: 10px;
   }
 `;
 
@@ -106,6 +121,10 @@ const Project = ({ name, github, link, tech, description, date }) => {
         </TextContainer>
 
         <ImageContainer>
+          {/* <ProjectImage
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/640px-React-icon.svg.png"
+            alt="React"
+          /> */}
           <ProjectTag>
             <Flex
               style={{
