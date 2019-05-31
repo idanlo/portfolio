@@ -90,7 +90,7 @@ const ProjectTag = styled.div`
   }
 `;
 
-const Project = ({ name, github, link, tech, description }) => {
+const Project = ({ name, github, link, tech, description, date }) => {
   return (
     <Card p={0}>
       <Flex style={{ height: CARD_HEIGHT }}>
@@ -139,7 +139,7 @@ const Project = ({ name, github, link, tech, description }) => {
               {tech}
             </ImageSubtitle>
             <Hide query={MEDIA_QUERY_SMALL}>
-              <ImageSubtitle bg="backgroundDark">May 30th 2019</ImageSubtitle>
+              <ImageSubtitle bg="backgroundDark">{date}</ImageSubtitle>
             </Hide>
           </ProjectTag>
         </ImageContainer>
@@ -154,6 +154,7 @@ Project.propTypes = {
   link: PropTypes.string,
   tech: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
 };
 
 const Projects = () => {
@@ -168,6 +169,7 @@ const Projects = () => {
               link
               tech
               description
+              date
             }
           }
         }

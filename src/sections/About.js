@@ -44,7 +44,7 @@ const About = () => (
     <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
       <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]}>
         <Fade bottom>
-          <h1>Hello World</h1>
+          <h1>I am Idan Lottan, a 16.5 year old web developer.</h1>
         </Fade>
       </Box>
 

@@ -5,7 +5,8 @@
       "github": "https://github.com/idanlo/react-spotify",
       "link": "https://react-spotify.netlify.com",
       "tech": "react",
-      "description": "A Spotify client made with React for the web"
+      "description": "A Spotify client made with React for the web",
+      "date": "2018"
     }
   },
   {
@@ -13,7 +14,8 @@
       "name": "react-native-spotify",
       "github": "https://github.com/idanlo/react-native-spotify",
       "tech": "react-native",
-      "description": "A Spotify client made with React-Native for mobile devices"
+      "description": "A Spotify client made with React-Native for mobile devices",
+      "date": "2019"
     }
   },
   {
@@ -22,7 +24,8 @@
       "github": "https://github.com/idanlo/react-spotify-api",
       "link": "https://npmjs.com/package/react-spotify-api",
       "tech": "react",
-      "description": "A React component library that makes interacting with the Spotify API easier using React Hooks and Render Props"
+      "description": "A React component library that makes interacting with the Spotify API easier using React Hooks and Render Props",
+      "date": "2019"
     }
   }
 ]

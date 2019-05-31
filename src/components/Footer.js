@@ -53,6 +53,7 @@ const Footer = () => (
             display: 'table',
           }}
         >
+
           Powered By
         </Text>
       </span>
