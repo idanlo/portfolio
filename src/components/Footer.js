@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Text, Flex, Box } from 'rebass';
 import Fade from 'react-reveal/Fade';
 import PropTypes from 'prop-types';
-import ContentfulLogo from './Logo/Contenful.svg';
 import GatsbyLogo from './Logo/Gatsby.svg';
 
 const FooterContainer = styled.footer`
@@ -54,22 +53,10 @@ const Footer = () => (
             display: 'table',
           }}
         >
-
           Powered By
         </Text>
       </span>
       <Flex justifyContent="center" alignItems="center">
-        <Logo
-          url="https://www.contentful.com/"
-          logo={ContentfulLogo}
-          alt="Powered by Contentful"
-        />
-        <Text m={2} fontSize={4}>
-          <span role="img" aria-label="heart" alt="heart">
-
-            ❤️
-          </span>
-        </Text>
         <Logo
           url="https://www.gatsbyjs.org/"
           logo={GatsbyLogo}

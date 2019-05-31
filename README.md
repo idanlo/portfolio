@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org"> <!-- TODO -->
-    <img alt="Gatsby" src="https://raw.githubusercontent.com/idanlo/portfolio/master/src/images/IdanLo.png" width="100" />
+  <a href="https://www.idanlo.netlify.com"> <!-- TODO -->
+    <img alt="Idan Lottan" src="https://raw.githubusercontent.com/idanlo/portfolio/master/src/media/IdanLo.png" width="100" />
   </a>
 </p>
 <h1 align="center">

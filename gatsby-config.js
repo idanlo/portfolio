@@ -1,5 +1,4 @@
-const manifestConfig = require('./manifest-config');
-require('dotenv').config();
+const colors = require('./colors');
 
 module.exports = {
   siteMetadata: {
@@ -9,10 +8,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: manifestConfig,
-    },
     'gatsby-plugin-styled-components',
     {
       resolve: 'gatsby-plugin-google-fonts',
@@ -28,7 +23,18 @@ module.exports = {
         path: `${__dirname}/src/data`,
       },
     },
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Idan Lottan Portfolio',
+        short_name: 'IdanLo',
+        start_url: '/',
+        background_color: colors.background,
+        theme_color: colors.primary,
+        display: 'minimal-ui',
+        icon: 'media/IdanLo.png',
+      },
+    },
     'gatsby-plugin-offline',
   ],
 };
