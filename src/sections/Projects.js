@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Image, Text, Flex, Box } from 'rebass';
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import Section from '../components/Section';
@@ -90,76 +90,100 @@ const ProjectTag = styled.div`
   }
 `;
 
-const Project = () => (
-  <Card p={0}>
-    <Flex style={{ height: CARD_HEIGHT }}>
-      <TextContainer>
-        <span>
-          <Title my={2} pb={1}>
+const Project = ({ name, github, link }) => {
+  return (
+    <Card p={0}>
+      <Flex style={{ height: CARD_HEIGHT }}>
+        <TextContainer>
+          <span>
+            <Title my={2} pb={1}>
+              {name}
+            </Title>
+          </span>
+          <Text width={[1]} style={{ overflow: 'auto' }}>
 
-            react-spotify
-          </Title>
-        </span>
-        <Text width={[1]} style={{ overflow: 'auto' }}>
+            A Spotify clone made with React.js
+          </Text>
+        </TextContainer>
 
-          A Spotify clone made with React.js
-        </Text>
-      </TextContainer>
+        <ImageContainer>
+          <ProjectTag>
+            <Flex
+              style={{
+                float: 'right',
+              }}
+            >
+              <Box mx={1} fontSize={5}>
+                <SocialLink
+                  name="Check repository"
+                  fontAwesomeIcon="github"
+                  url={github}
+                />
+              </Box>
+              <Box mx={1} fontSize={5}>
+                {link && (
+                  <SocialLink
+                    name="See project"
+                    fontAwesomeIcon="globe"
+                    url={link}
+                  />
+                )}
+              </Box>
+            </Flex>
+            <ImageSubtitle
+              bg="primaryLight"
+              color="white"
+              y="bottom"
+              x="right"
+              round
+            >
 
-      <ImageContainer>
-        <ProjectTag>
-          <Flex
-            style={{
-              float: 'right',
-            }}
-          >
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="Check repository"
-                fontAwesomeIcon="github"
-                url="https://github.com/idanlo"
-              />
-            </Box>
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="See project"
-                fontAwesomeIcon="globe"
-                url="https://github.com/idanlo"
-              />
-            </Box>
-          </Flex>
-          <ImageSubtitle
-            bg="primaryLight"
-            color="white"
-            y="bottom"
-            x="right"
-            round
-          >
+              React.js
+            </ImageSubtitle>
+            <Hide query={MEDIA_QUERY_SMALL}>
+              <ImageSubtitle bg="backgroundDark">May 30th 2019</ImageSubtitle>
+            </Hide>
+          </ProjectTag>
+        </ImageContainer>
+      </Flex>
+    </Card>
+  );
+};
 
-            React.js
-          </ImageSubtitle>
-          <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">May 30th 2019</ImageSubtitle>
-          </Hide>
-        </ProjectTag>
-      </ImageContainer>
-    </Flex>
-  </Card>
-);
+Project.propTypes = {
+  name: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired,
+  link: PropTypes.string,
+};
 
-const Projects = () => (
-  <Section.Container id="projects" Background={Background}>
-    <Section.Header name="Projects" icon="💻" Box="notebook" />
-    <CardContainer minWidth="350px">
-      {Array(5)
-        .fill(0)
-        .map((p, i) => (
-          <Fade bottom delay={i * 200}>
-            <Project key={p} />
+const Projects = () => {
+  const data = useStaticQuery(graphql`
+    query GetAllProjects {
+      allIndexJson {
+        edges {
+          node {
+            value {
+              name
+              github
+              link
+            }
+          }
+        }
+      }
+    }
+  `);
+  return (
+    <Section.Container id="projects" Background={Background}>
+      <Section.Header name="Projects" icon="💻" Box="notebook" />
+      <CardContainer minWidth="350px">
+        {data.allIndexJson.edges.map(({ node }, i) => (
+          <Fade bottom delay={i * 200} key={node.value.name}>
+            <Project {...node.value} />
           </Fade>
         ))}
-    </CardContainer>
-  </Section.Container>
-);
+      </CardContainer>
+    </Section.Container>
+  );
+};
 
 export default Projects;
