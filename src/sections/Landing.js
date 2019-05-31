@@ -13,6 +13,16 @@ const links = [
     name: 'GitHub',
     url: 'https://github.com/idanlo',
   },
+  {
+    fontAwesomeIcon: 'twitter',
+    name: 'Twitter',
+    url: 'https://twitter.com/idan2110',
+  },
+  {
+    fontAwesomeIcon: 'linkedin',
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/idanlo',
+  },
 ];
 
 const Background = () => (
