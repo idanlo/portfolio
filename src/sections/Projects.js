@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, Flex, Box, Image } from 'rebass';
+import { Text, Flex, Box } from 'rebass';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
@@ -76,6 +76,10 @@ const ImageContainer = styled.div`
   ${MEDIA_QUERY_SMALL} {
     width: calc(${CARD_HEIGHT} / 2);
     margin-top: calc(${CARD_HEIGHT} / 2 + ${CARD_HEIGHT} / 4 + 5px);
+  }
+
+  ${Card}:hover & {
+    margin-top: calc(${CARD_HEIGHT} + 4px);
   }
 `;
 
