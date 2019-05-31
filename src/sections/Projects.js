@@ -159,7 +159,7 @@ Project.propTypes = {
 const Projects = () => {
   const data = useStaticQuery(graphql`
     query GetAllProjects {
-      allIndexJson {
+      allProjectsJson {
         edges {
           node {
             value {
@@ -178,7 +178,7 @@ const Projects = () => {
     <Section.Container id="projects" Background={Background}>
       <Section.Header name="Projects" icon="💻" Box="notebook" />
       <CardContainer minWidth="350px">
-        {data.allIndexJson.edges.map(({ node }, i) => (
+        {data.allProjectsJson.edges.map(({ node }, i) => (
           <Fade bottom delay={i * 200} key={node.value.name}>
             <Project {...node.value} />
           </Fade>

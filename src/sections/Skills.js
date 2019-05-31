@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Heading, Text } from 'rebass';
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import Section from '../components/Section';
@@ -49,11 +49,10 @@ const EllipsisHeading = styled(Heading)`
   border-bottom: ${props => props.theme.colors.primary} 5px solid;
 `;
 
-const Post = () => (
+const Post = ({ name }) => (
   <Card onClick={() => window.open('', '_blank')} pb={4}>
     <EllipsisHeading m={3} p={1}>
-
-      React.js
+      {name}
     </EllipsisHeading>
     {
       <CoverImage
@@ -67,7 +66,7 @@ const Post = () => (
 );
 
 Post.propTypes = {
-  // title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   // text: PropTypes.string.isRequired,
   // image: PropTypes.string.isRequired,
   // url: PropTypes.string.isRequired,
@@ -75,19 +74,32 @@ Post.propTypes = {
   // time: PropTypes.number.isRequired,
 };
 
-const Skills = () => (
-  <Section.Container id="skills" Background={Background}>
-    <Section.Header name="Skills" icon="✍️" label="skills" />
-    {/* <CardContainer minWidth="300px">
-      {Array(5)
-        .fill(0)
-        .map((p, i) => (
-          <Fade bottom>
-            <Post key={i} />
+const Skills = () => {
+  const data = useStaticQuery(graphql`
+    query GetAllSkills {
+      allSkillsJson {
+        edges {
+          node {
+            value {
+              name
+            }
+          }
+        }
+      }
+    }
+  `);
+  return (
+    <Section.Container id="skills" Background={Background}>
+      <Section.Header name="Skills" icon="✍️" label="skills" />
+      <CardContainer minWidth="300px">
+        {data.allSkillsJson.edges.map(({ node }) => (
+          <Fade bottom key={node.value.name}>
+            <Post {...node.value} />
           </Fade>
         ))}
-    </CardContainer> */}
-  </Section.Container>
-);
+      </CardContainer>
+    </Section.Container>
+  );
+};
 
 export default Skills;
