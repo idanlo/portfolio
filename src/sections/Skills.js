@@ -7,7 +7,6 @@ import Fade from 'react-reveal/Fade';
 import Section from '../components/Section';
 import { CardContainer, Card } from '../components/Card';
 import Triangle from '../components/Triangle';
-import ImageSubtitle from '../components/ImageSubtitle';
 
 const Background = () => (
   <div>
@@ -54,13 +53,12 @@ const Post = ({ name }) => (
     <EllipsisHeading m={3} p={1}>
       {name}
     </EllipsisHeading>
-    {
-      <CoverImage
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
-        height="200px"
-        alt="React.js"
-      />
-    }
+    <CoverImage
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
+      height="200px"
+      alt="React.js"
+    />
+
     <Text m={3}>Hello world</Text>
   </Card>
 );
