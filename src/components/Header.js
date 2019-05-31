@@ -52,7 +52,7 @@ const Header = () => (
               <FontAwesome
                 name="code"
                 onClick={home.onClick}
-                size="lg"
+                size="2x"
                 style={{
                   color: 'white',
                   cursor: 'pointer',
