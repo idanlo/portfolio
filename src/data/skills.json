@@ -1,6 +1,18 @@
 [
   {
     "value": {
+      "name": "JavaScript",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png"
+    }
+  },
+  {
+    "value": {
+      "name": "TypeScript",
+      "image": "https://raw.githubusercontent.com/remojansen/logo.ts/master/ts.png"
+    }
+  },
+  {
+    "value": {
       "name": "React",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
     }
