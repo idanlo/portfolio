@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Heading, Text } from 'rebass';
+import { Heading } from 'rebass';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
@@ -48,28 +48,18 @@ const EllipsisHeading = styled(Heading)`
   border-bottom: ${props => props.theme.colors.primary} 5px solid;
 `;
 
-const Post = ({ name }) => (
+const Skill = ({ name, image }) => (
   <Card onClick={() => window.open('', '_blank')} pb={4}>
     <EllipsisHeading m={3} p={1}>
       {name}
     </EllipsisHeading>
-    <CoverImage
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
-      height="200px"
-      alt={name}
-    />
-
-    <Text m={3}>Hello world</Text>
+    <CoverImage src={image} height="200px" alt={name} />
   </Card>
 );
 
-Post.propTypes = {
+Skill.propTypes = {
   name: PropTypes.string.isRequired,
-  // text: PropTypes.string.isRequired,
-  // image: PropTypes.string.isRequired,
-  // url: PropTypes.string.isRequired,
-  // date: PropTypes.string.isRequired,
-  // time: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 const Skills = () => {
@@ -80,6 +70,7 @@ const Skills = () => {
           node {
             value {
               name
+              image
             }
           }
         }
@@ -92,7 +83,7 @@ const Skills = () => {
       <CardContainer minWidth="300px">
         {data.allSkillsJson.edges.map(({ node }) => (
           <Fade bottom key={node.value.name}>
-            <Post {...node.value} />
+            <Skill {...node.value} />
           </Fade>
         ))}
       </CardContainer>
