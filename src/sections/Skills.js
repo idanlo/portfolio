@@ -49,7 +49,7 @@ const EllipsisHeading = styled(Heading)`
 `;
 
 const Skill = ({ name, image }) => (
-  <Card onClick={() => window.open('', '_blank')} pb={4}>
+  <Card pb={4}>
     <EllipsisHeading m={3} p={1}>
       {name}
     </EllipsisHeading>
