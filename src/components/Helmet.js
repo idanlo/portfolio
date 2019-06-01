@@ -57,6 +57,14 @@ const Helmet = ({ description, lang, meta }) => {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: "twitter:image",
+          content: "https://raw.githubusercontent.com/idanlo/portfolio/master/media/IdanLo.png"
+        },
+        {
+          name: "twitter:image:src",
+          content: "https://raw.githubusercontent.com/idanlo/portfolio/master/media/IdanLo.png"
+        }
       ].concat(meta)}
     >
       <link
