@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import { Box, Image, Flex } from 'rebass';
 import styled from 'styled-components';
@@ -38,13 +39,36 @@ const ProfilePicture = styled(Image)`
   }
 `;
 
+const AboutContainer = styled.div`
+  h3 {
+    font-weight: normal;
+  }
+`;
+
 const About = () => (
   <Section.Container id="about" Background={Background}>
     <Section.Header name="About me" label="person" />
     <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
       <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]}>
         <Fade bottom>
-          <h1>I am Idan Lottan, a 16.5 year old web developer.</h1>
+          <h1>I am Idan Lottan - a web developer.</h1>
+          <AboutContainer>
+            <h3>
+              I have been a web developer for over 3 years and in that time I
+              have gained a lot of knowledge and experience with JavaScript and
+              it&apos;s ecosystem - things like TypeScript, React, Node and many
+              more.
+            </h3>
+            <h3>
+              Building state-of-the-art, easy to use, user-friendly websites and
+              applications is truly a passion of mine.
+            </h3>
+            <h3>
+              In addition to my knowledge, I am actively learning and expanding
+              my knowledge every day and staying up to date with trends and
+              current standards in the industry
+            </h3>
+          </AboutContainer>
         </Fade>
       </Box>
 
