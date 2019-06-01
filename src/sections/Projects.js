@@ -73,13 +73,18 @@ const ImageContainer = styled.div`
   margin-top: calc(${CARD_HEIGHT} + 5px);
   width: ${CARD_HEIGHT};
 
-  ${MEDIA_QUERY_SMALL} {
-    width: calc(${CARD_HEIGHT} / 2);
-    margin-top: calc(${CARD_HEIGHT} / 2 + ${CARD_HEIGHT} / 4 + 5px);
+  ${Card}:hover {
+    margin-top: calc(${CARD_HEIGHT} + 4px);
   }
 
-  ${Card}:hover & {
-    margin-top: calc(${CARD_HEIGHT} + 4px);
+  ${MEDIA_QUERY_SMALL} {
+    &:hover,
+    &:focus {
+      width: calc(${CARD_HEIGHT} / 2);
+      margin-top: calc(${CARD_HEIGHT} / 2 + ${CARD_HEIGHT} / 4 + 4px);
+    }
+    width: calc(${CARD_HEIGHT} / 2);
+    margin-top: calc(${CARD_HEIGHT} / 2 + ${CARD_HEIGHT} / 4 + 5px);
   }
 `;
 
@@ -204,9 +209,11 @@ const Projects = () => {
       <Section.Header name="Projects" label="projects" Box="notebook" />
       <CardContainer minWidth="350px">
         {data.allProjectsJson.edges.map(({ node }, i) => (
-          <Fade bottom delay={i * 200} key={node.value.name}>
-            <Project {...node.value} />
-          </Fade>
+          <div style={{ width: '100%' }}>
+            <Fade bottom delay={i * 200} key={node.value.name}>
+              <Project {...node.value} />
+            </Fade>
+          </div>
         ))}
       </CardContainer>
     </Section.Container>
