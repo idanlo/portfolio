@@ -22,5 +22,17 @@
       "name": "React-Native",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
     }
+  },
+  {
+    "value": {
+      "name": "Nodejs",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png"
+    }
+  },
+  {
+    "value": {
+      "name": "MongoDB",
+      "image": "https://xebialabs.com/wp-content/uploads/files/tool-chest/mongodb.jpg"
+    }
   }
 ]
