@@ -79,7 +79,7 @@ const Skills = () => {
   `);
   return (
     <Section.Container id="skills" Background={Background}>
-      <Section.Header name="Skills" icon="✍️" label="skills" />
+      <Section.Header name="Skills" label="skills" />
       <CardContainer minWidth="300px">
         {data.allSkillsJson.edges.map(({ node }) => (
           <Fade bottom key={node.value.name}>

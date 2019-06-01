@@ -201,7 +201,7 @@ const Projects = () => {
   `);
   return (
     <Section.Container id="projects" Background={Background}>
-      <Section.Header name="Projects" icon="💻" Box="notebook" />
+      <Section.Header name="Projects" label="projects" Box="notebook" />
       <CardContainer minWidth="350px">
         {data.allProjectsJson.edges.map(({ node }, i) => (
           <Fade bottom delay={i * 200} key={node.value.name}>
