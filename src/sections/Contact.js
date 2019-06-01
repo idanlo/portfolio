@@ -57,6 +57,7 @@ const Submit = styled.button`
   font-weight: bold;
   font-size: 26px;
   box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 `;
 
 const Form = styled.form.attrs({
@@ -69,19 +70,15 @@ const Form = styled.form.attrs({
   width: 65%;
   font-family: Cabin;
 
-  input {
-    width: 100%;
-    padding: 25px;
-    margin: 10px 0;
-    font-family: Cabin;
-  }
-
+  input,
   textarea {
     width: 100%;
     padding: 25px;
     margin: 10px 0;
     font-family: Cabin;
-    resize: none;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid ${props => props.theme.colors.primary};
   }
 
   ${MEDIA_QUERY_SMALL} {
