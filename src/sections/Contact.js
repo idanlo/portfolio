@@ -34,6 +34,8 @@ const Background = () => (
   </div>
 );
 
+const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
+
 const EllipsisHeading = styled(Heading)`
   overflow: hidden;
   text-overflow: ellipsis;
@@ -80,6 +82,10 @@ const Form = styled.form.attrs({
     margin: 10px 0;
     font-family: Cabin;
     resize: none;
+  }
+
+  ${MEDIA_QUERY_SMALL} {
+    width: 85%;
   }
 `;
 
