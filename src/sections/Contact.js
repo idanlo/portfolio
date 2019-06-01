@@ -1,19 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Heading } from 'rebass';
-import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import Section from '../components/Section';
-import { CardContainer, Card } from '../components/Card';
+import { Card } from '../components/Card';
 import Triangle from '../components/Triangle';
 
 const Background = () => (
   <div>
     <Triangle
       color="backgroundDark"
-      // height={['15vh', '10vh']}
-      // width={['100vw', '100vw']}
       height={['100vh', '100vh']}
       width={['100vw', '100vw']}
       invertX
@@ -37,11 +34,6 @@ const Background = () => (
   </div>
 );
 
-const CoverImage = styled.img`
-  width: 100%;
-  object-fit: cover;
-`;
-
 const EllipsisHeading = styled(Heading)`
   overflow: hidden;
   text-overflow: ellipsis;
@@ -51,63 +43,78 @@ const EllipsisHeading = styled(Heading)`
   border-bottom: ${props => props.theme.colors.primary} 5px solid;
 `;
 
-const Label = styled.label``;
+const Submit = styled.button`
+  background: ${props => props.theme.colors.primary};
+  border: none;
+  outline: none;
+  width: 100%;
+  color: white;
+  font-family: Cabin;
+  height: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 26px;
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+`;
 
-const Skill = ({ name, image }) => (
+const Form = styled.form.attrs({
+  name: 'contact',
+  method: 'POST',
+  'data-netlify': 'true',
+  'data-netlify-honeypot': 'bot-field',
+})`
+  margin: 0 auto;
+  width: 65%;
+  font-family: Cabin;
+
+  input {
+    width: 100%;
+    padding: 25px;
+    margin: 10px 0;
+    font-family: Cabin;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 25px;
+    margin: 10px 0;
+    font-family: Cabin;
+    resize: none;
+  }
+`;
+
+const FormItem = ({ name }) => (
   <Card pb={4}>
     <EllipsisHeading m={3} p={1}>
       {name}
     </EllipsisHeading>
-    <CoverImage src={image} height="200px" alt={name} />
+    <input
+      type="text"
+      style={{ width: '90%', justifySelf: 'center', margin: '0 auto' }}
+    />
   </Card>
 );
 
-Skill.propTypes = {
+FormItem.propTypes = {
   name: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
 };
 
-const Skills = () => {
+const Contact = () => {
   return (
-    <Section.Container id="skills" Background={Background}>
-      <Section.Header name="Skills" label="skills" />
-      <CardContainer minWidth="300px">
-        <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-        >
-          <p>
-            <Label>
-
-              Your Name:
-              <input type="text" name="name" />
-            </Label>
-          </p>
-          <p>
-            <Label>
-
-              Your Email:
-              <input type="email" name="email" />
-            </Label>
-          </p>
-          <p>
-            <Label>
-
-              Message:
-              <textarea name="message" />
-            </Label>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-          </p>
+    <Section.Container id="contact" Background={Background}>
+      <Section.Header name="Contact" label="contact" />
+      <Fade>
+        <Form>
+          <input type="text" placeholder="Name" name="name" />
+          <input type="email" placeholder="Email" name="email" />
+          <textarea placeholder="Message" rows="5" name="message" />
+          <Submit type="submit">Submit</Submit>
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
-        </form>
-      </CardContainer>
+        </Form>
+      </Fade>
     </Section.Container>
   );
 };
 
-export default Skills;
+export default Contact;
