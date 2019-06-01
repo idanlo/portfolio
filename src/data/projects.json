@@ -40,16 +40,6 @@
   },
   {
     "value": {
-      "name": "Dribble Gene Design",
-      "github": "https://github.com/idanlo/dribble-gene-design",
-      "link": "https://idanlo.github.io/dribble-gene-design/",
-      "tech": "react",
-      "description": "An application inspired by a Dribbble design",
-      "date": "2019"
-    }
-  },
-  {
-    "value": {
       "name": "JS Color Game",
       "github": "https://github.com/idanlo/JS-Color-Game",
       "link": "https://idanlo.github.io/JS-Color-Game/",
