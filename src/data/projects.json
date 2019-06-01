@@ -27,5 +27,45 @@
       "description": "A React component library that makes interacting with the Spotify API easier using React Hooks and Render Props",
       "date": "2019"
     }
+  },
+  {
+    "value": {
+      "name": "Shopping",
+      "github": "https://github.com/idanlo/shopping",
+      "link": "https://idanlo-shopping.herokuapp.com/",
+      "tech": "react, node",
+      "description": "A shoe store application concept",
+      "date": "2019"
+    }
+  },
+  {
+    "value": {
+      "name": "Dribble Gene Design",
+      "github": "https://github.com/idanlo/dribble-gene-design",
+      "link": "https://idanlo.github.io/dribble-gene-design/",
+      "tech": "react",
+      "description": "An application inspired by a Dribbble design",
+      "date": "2019"
+    }
+  },
+  {
+    "value": {
+      "name": "JS Color Game",
+      "github": "https://github.com/idanlo/JS-Color-Game",
+      "link": "https://idanlo.github.io/JS-Color-Game/",
+      "tech": "javascript",
+      "description": "A Javascript color guessing game",
+      "date": "2017"
+    }
+  },
+  {
+    "value": {
+      "name": "YelpCamp",
+      "github": "https://github.com/idanlo/YelpCamp-By-IdanLo",
+      "link": "https://idanloyelpcamp.herokuapp.com/campgrounds",
+      "tech": "node, ejs",
+      "description": "Yelp for campground locations",
+      "date": "2017"
+    }
   }
 ]
