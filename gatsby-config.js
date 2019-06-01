@@ -27,7 +27,7 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'Idan Lottan Portfolio',
-        short_name: 'IdanLo',
+        short_name: 'Idan Lottan',
         start_url: '/',
         background_color: colors.background,
         theme_color: colors.primary,
