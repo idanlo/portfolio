@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Idan Lottan | Portfolio',
     description: 'Web Developer - React, Node, and more',
-    author: 'IdanLo',
+    author: 'Idan Lottan',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
