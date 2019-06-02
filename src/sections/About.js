@@ -56,7 +56,7 @@ const About = () => (
             <h3>
               I have been a web developer for over 3 years and in that time I
               have gained a lot of knowledge and experience with JavaScript and
-              it&apos;s ecosystem - things like TypeScript, React, Node and many
+              its ecosystem - things like TypeScript, React, Node and many
               more.
             </h3>
             <h3>
