@@ -210,7 +210,7 @@ const Projects = () => {
       <CardContainer minWidth="350px">
         {data.allProjectsJson.edges.map(({ node }, i) => (
           <div style={{ width: '100%' }} key={node.value.name}>
-            <Fade bottom delay={i * 200} key={node.value.name}>
+            <Fade bottom delay={i * 200}>
               <Project {...node.value} />
             </Fade>
           </div>
