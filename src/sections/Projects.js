@@ -209,7 +209,7 @@ const Projects = () => {
       <Section.Header name="Projects" label="projects" Box="notebook" />
       <CardContainer minWidth="350px">
         {data.allProjectsJson.edges.map(({ node }, i) => (
-          <div style={{ width: '100%' }}>
+          <div style={{ width: '100%' }} key={node.value.name}>
             <Fade bottom delay={i * 200} key={node.value.name}>
               <Project {...node.value} />
             </Fade>
