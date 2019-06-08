@@ -41,7 +41,7 @@
     "react-helmet": "^5.2.0",
     "react-reveal": "^1.2.2",
     "react-scroll-section": "^1.3.0",
-    "react-text-loop": "^2.0.1",
+    "react-text-loop": "^2.0.2",
     "react-tippy": "^1.2.2",
     "rebass": "^3.0.0",
     "styled-components": "^4.0.2"
