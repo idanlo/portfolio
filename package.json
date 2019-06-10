@@ -26,7 +26,7 @@
     "dotenv": "^8.0.0",
     "envfile": "^3.0.0",
     "gatsby": "^2.8.6",
-    "gatsby-plugin-google-fonts": "^0.0.4",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.0.29",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
